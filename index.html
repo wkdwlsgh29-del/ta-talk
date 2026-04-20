@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TA 화법 | BB 3건에서 초회 약속 2건 뽑는 첫마디 구조</title>
-<meta name="description" content="TA는 전화 잘해서 되는 게 아닙니다. 어떤 말을 어떤 순서로 하느냐 — MDRT COT 조직이 신입까지 같은 결과를 뽑아내는 4단계 TA 화법 구조." />
-<meta property="og:title" content="TA 화법 | BB 3건 → 초회 2건 뽑는 구조" />
-<meta property="og:description" content="첫마디에서 끊기면 끝, 첫마디를 버티면 약속은 따라옵니다. 실전 4단계 프레임." />
+<title>TA 화법 | DB 3건에서 초회 약속 2건 뽑는 첫마디 구조</title>
+<meta name="description" content="TA는 전화 잘해서 되는 게 아닙니다. 첫 3초에 고객 뇌에서 일어나는 일을 알면, 끊기지 않습니다. MDRT COT 조직이 신입까지 같은 결과를 뽑아낸 4단계 구조 + 실전 스크립트 12쌍 + 7일 훈련 플랜." />
+<meta property="og:title" content="TA 화법 | DB 3건 → 초회 2건 뽑는 구조" />
+<meta property="og:description" content="첫마디에서 끊기는 이유는 말재주가 아니라 '순서'입니다. 조직에서 검증된 4단계 + 고객 심리 분석 + 7일 훈련." />
 <meta property="og:type" content="article" />
 <meta property="og:locale" content="ko_KR" />
 
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"></script>
 
 <script>
   tailwind.config = {
@@ -63,33 +62,13 @@
   }
   .btn-line:hover { border-color:#0a0a0a; background:#fafafa; }
 
-  .chip {
-    display:inline-flex; align-items:center; gap:.4rem;
-    padding:.32rem .65rem;
-    background:#eef3ff; color:#1a3fb2;
-    border-radius:999px; font-size:.78rem; font-weight:600;
-  }
-  .chip-gray {
-    display:inline-flex; align-items:center; gap:.4rem;
-    padding:.32rem .65rem;
-    background:#f7f7f7; color:#525252;
-    border:1px solid #ededed; border-radius:999px;
-    font-size:.78rem; font-weight:500;
-  }
-  .chip-dark {
-    display:inline-flex; align-items:center; gap:.4rem;
-    padding:.32rem .65rem;
-    background:#0a0a0a; color:#ffffff;
-    border-radius:999px; font-size:.78rem; font-weight:600;
-  }
+  .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.32rem .65rem; background:#eef3ff; color:#1a3fb2; border-radius:999px; font-size:.78rem; font-weight:600; }
+  .chip-gray { display:inline-flex; align-items:center; gap:.4rem; padding:.32rem .65rem; background:#f7f7f7; color:#525252; border:1px solid #ededed; border-radius:999px; font-size:.78rem; font-weight:500; }
+  .chip-dark { display:inline-flex; align-items:center; gap:.4rem; padding:.32rem .65rem; background:#0a0a0a; color:#ffffff; border-radius:999px; font-size:.78rem; font-weight:600; }
+  .chip-red  { display:inline-flex; align-items:center; gap:.4rem; padding:.32rem .65rem; background:#fff5f5; color:#7b1f1f; border:1px solid #fed7d7; border-radius:999px; font-size:.78rem; font-weight:600; }
 
-  .num {
-    display:inline-grid; place-items:center;
-    width:42px; height:42px;
-    background:#0a0a0a; color:#ffffff;
-    border-radius:10px;
-    font-weight:800; font-size:1.05rem;
-  }
+  .num { display:inline-grid; place-items:center; width:42px; height:42px; background:#0a0a0a; color:#ffffff; border-radius:10px; font-weight:800; font-size:1.05rem; }
+  .num-sm { display:inline-grid; place-items:center; width:28px; height:28px; background:#0a0a0a; color:#ffffff; border-radius:7px; font-weight:800; font-size:.8rem; }
 
   .rule { height:1px; background:#ededed; }
   iconify-icon { display:inline-block; }
@@ -97,33 +76,67 @@
   .section { padding-top: 5rem; padding-bottom: 5rem; }
   @media (max-width: 768px) { .section { padding-top: 3.5rem; padding-bottom: 3.5rem; } }
 
-  /* Quote bubble */
-  .bubble {
-    position:relative;
-    background:#f7f7f7;
-    border:1px solid #ededed;
-    border-radius:14px;
-    padding:1rem 1.15rem;
+  .bubble { position:relative; background:#f7f7f7; border:1px solid #ededed; border-radius:14px; padding:1rem 1.15rem; }
+  .bubble-bad { background:#fff5f5; border-color:#fed7d7; color:#7b1f1f; }
+  .bubble-good { background:#eef3ff; border-color:#c7d6ff; color:#1a3fb2; }
+
+  .step-card { background:#ffffff; border:1px solid #ededed; border-radius:14px; padding: 1.75rem; }
+  @media (min-width: 768px) { .step-card { padding: 2rem; } }
+
+  .psych-box {
+    background: linear-gradient(180deg, #fcfbff 0%, #f4f2ff 100%);
+    border: 1px solid #e5e0ff;
+    border-radius: 12px;
+    padding: 1.15rem 1.25rem;
   }
-  .bubble-bad {
+  .scene-box {
+    background: #0a0a0a;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 1.15rem 1.25rem;
+  }
+  .scene-line { padding: .5rem 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .scene-line:last-child { border-bottom: 0; }
+
+  .verdict-box {
     background:#fff5f5;
-    border-color:#fed7d7;
+    border:1px solid #fed7d7;
+    border-left: 4px solid #c53030;
+    border-radius:10px;
+    padding: 1rem 1.15rem;
     color:#7b1f1f;
   }
-  .bubble-good {
-    background:#eef3ff;
-    border-color:#c7d6ff;
-    color:#1a3fb2;
+
+  .data-row {
+    display:grid; grid-template-columns: 1fr auto auto; gap: 1rem;
+    padding: .9rem 1rem;
+    border-bottom: 1px solid #ededed;
+    align-items:center;
+  }
+  .data-row:last-child { border-bottom: 0; }
+  .data-bad { color:#7b1f1f; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .data-good { color:#1a3fb2; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+  .diag-item {
+    display:flex; align-items:flex-start; gap:.8rem;
+    padding: .9rem 1rem;
+    background:#ffffff; border:1px solid #ededed; border-radius:10px;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .diag-item:hover { border-color:#1f4ed8; background:#fafaff; }
+  .diag-check {
+    flex: 0 0 22px; height:22px; border:2px solid #a3a3a3; border-radius:5px; margin-top:2px;
   }
 
-  /* Step card */
-  .step-card {
-    background:#ffffff;
-    border:1px solid #ededed;
-    border-radius:14px;
-    padding: 1.75rem;
+  .day-card {
+    background:#ffffff; border:1px solid #ededed; border-radius:12px;
+    padding: 1.1rem 1.15rem;
   }
-  @media (min-width: 768px) { .step-card { padding: 2rem; } }
+  .day-badge {
+    display:inline-flex; align-items:center; justify-content:center;
+    padding: .2rem .55rem; background: #0a0a0a; color:#fff; border-radius:6px;
+    font-size:.72rem; font-weight:800; letter-spacing: .04em;
+  }
 </style>
 </head>
 <body class="min-h-[100dvh] antialiased text-ink-900 selection:bg-brand-soft selection:text-brand-hover">
@@ -147,23 +160,36 @@
   <div class="max-w-4xl mx-auto px-5">
     <span class="chip-dark">
       <iconify-icon icon="solar:phone-calling-bold" width="14"></iconify-icon>
-      TA 화법 · 실전 프레임
+      TA 화법 · 실전 프레임 + 심리 분석
     </span>
-    <h1 class="ko-head font-extrabold text-ink-900 mt-6 text-[clamp(2rem,5.2vw,3.5rem)]">
-      BB 3건에서 초회 약속 2건.<br/>
-      <span class="text-brand">운이 아니라 첫마디 구조입니다.</span>
+    <h1 class="ko-head font-black text-ink-900 mt-6 text-4xl md:text-[3rem] tracking-tight">
+      DB 3건에서 초회 약속 2건.<br/>
+      <span class="text-brand">전화 잘해서가 아니라, 첫마디 순서 때문입니다.</span>
     </h1>
-    <p class="ko-body text-ink-500 mt-6 text-[1.05rem] max-w-2xl">
-      고객이 직접 상담 신청한 DB에 <span class="font-semibold text-ink-900">첫 연락</span>을 드리는 구간. 소개도 지인도 아니고, 고객 입장에선 "내가 신청한 건 맞는데 누구세요?"가 기본값입니다.
-      TA는 전화 잘한다고 되는 게 아니라 어떤 말을, 어떤 순서로 하느냐 — 청마디에서 끊기면 끝이고, 첫마디를 버티면 약속은 따라옵니다.
+    <p class="ko-body text-ink-500 mt-6 max-w-2xl text-[1.05rem]">
+      상담 신청한 고객이 전화를 받는 순간, 고객 머릿속에서는 자동으로 "누구지? 왜 전화하지?"가 돌아갑니다.
+      이 3초 안에 <span class="font-semibold text-ink-900">"영업전화" 회로</span>가 켜지면, 뒤에 무슨 말을 해도 귀에 안 들어옵니다.
+      반대로 <span class="font-semibold text-ink-900">"내가 신청한 거"</span> 회로로 돌려놓으면, 첫마디부터 대화가 이어집니다.
+      재능 아닙니다. 순서입니다. 그래서 신입도 같은 결과가 나옵니다.
     </p>
 
+    <div class="mt-9 flex flex-wrap items-center gap-3">
+      <a href="#framework" class="btn-brand">
+        4단계 구조 바로 보기
+        <iconify-icon icon="solar:arrow-down-linear" width="18"></iconify-icon>
+      </a>
+      <a href="#cta" class="btn-line">
+        <iconify-icon icon="solar:users-group-rounded-linear" width="18"></iconify-icon>
+        세일즈 아카데미 단톡방
+      </a>
+    </div>
+
     <!-- Result strip -->
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-100 border border-ink-100 rounded-2xl overflow-hidden">
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-100 border border-ink-100 rounded-2xl overflow-hidden">
       <div class="bg-white p-6">
-        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">BB 3건 중</div>
+        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">DB 3건 중</div>
         <div class="mt-2 font-extrabold text-3xl text-ink-900 tabular-nums">초회 <span class="text-brand">2건</span></div>
-        <div class="text-sm text-ink-500 mt-1">약속 체결률 약 66%</div>
+        <div class="text-sm text-ink-500 mt-1">약속 체결률 약 <span class="font-semibold">66.7%</span> · 업계 평균의 3배</div>
       </div>
       <div class="bg-white p-6">
         <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">적용 범위</div>
@@ -171,22 +197,145 @@
         <div class="text-sm text-ink-500 mt-1">조직 시스템화로 동일 결과</div>
       </div>
       <div class="bg-white p-6">
-        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">핵심 구간</div>
+        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">결정 구간</div>
         <div class="mt-2 font-extrabold text-3xl text-ink-900">첫 <span class="text-brand">15초</span></div>
-        <div class="text-sm text-ink-500 mt-1">끊김 여부가 결정되는 순간</div>
+        <div class="text-sm text-ink-500 mt-1">끊김 vs 약속이 결정되는 순간</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SELF-DIAGNOSIS -->
+<section class="section bg-ink-50 border-y border-ink-100 !pt-14 !pb-14">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip-red"><iconify-icon icon="solar:clipboard-check-bold" width="14"></iconify-icon> 3초 자가진단</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2rem]">
+      혹시 이 5가지 중 하나라도 해당되시나요?
+    </h2>
+    <p class="ko-body text-ink-500 mt-3 max-w-2xl">
+      아래 중 <span class="font-semibold text-ink-900">2개 이상 체크</span>되시면, 지금 TA 결과가 안 나오는 원인은 "열심히 안 해서"가 아닙니다. 첫마디 구조 문제예요.
+    </p>
+
+    <div class="mt-8 space-y-3">
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">첫 통화 개시부터 "안녕하세요 OO생명 OOO입니다"로 시작한다</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">이 순간 고객 뇌는 3초 안에 "영업전화" 폴더로 이 통화를 분류합니다.</p>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">"상담 신청 주신 거 맞으시죠?" 확인 질문으로 시작한 적 있다</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">기억이 흐릿한 신청자에게는 "아 그거 그냥 눌러본 건데" 빠져나갈 문을 여는 질문입니다.</p>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">"지금 바쁘세요" 한마디에 "네 알겠습니다 나중에…" 로 물러난다</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">두 번째 문장을 준비하지 않으면 DB 한 건이 거기서 끝납니다.</p>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">약속 잡을 때 "언제가 편하세요?" 열린 질문으로 묻는다</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">선택지가 많으면 뇌는 결정을 미룹니다 (Schwartz의 선택 과부하). 결정률이 떨어지는 구조예요.</p>
+        </div>
+      </div>
+      <div class="diag-item">
+        <div class="diag-check"></div>
+        <div>
+          <div class="font-bold text-ink-900">부재중이거나 거절당한 DB는 "다음에 다시" 하고 리스트에서 사실상 버려진다</div>
+          <p class="ko-body text-ink-500 text-sm mt-1">DB 가치는 재통화 2~3회에서 70% 이상이 나옵니다. 1차 통화만 하면 대부분 버리는 셈.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT COMPARE: A vs B -->
+<section class="section">
+  <div class="max-w-5xl mx-auto px-5">
+    <span class="chip-gray"><iconify-icon icon="solar:users-group-two-rounded-bold" width="14"></iconify-icon> 같은 DB, 다른 설계사</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      같은 DB 1건을 두 명이 받았을 때,<br/>
+      <span class="text-brand">결과는 왜 정반대로 갈라지는가.</span>
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      같은 연령, 같은 지역, 같은 질문 신청서. 상품도 비슷한 수준을 준비합니다. 그런데 A는 평균 <span class="font-semibold text-ink-900">5~11%</span>에서 약속이 나오고, B는 <span class="font-semibold text-ink-900">54~68%</span>에서 나옵니다. 차이는 아래 3장면에서 갈라집니다.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- A -->
+      <div class="step-card">
+        <div class="flex items-center gap-3">
+          <span class="num-sm">A</span>
+          <div class="font-bold text-ink-900">평균 약속률 <span class="data-bad">5~11%</span></div>
+        </div>
+        <div class="mt-5 space-y-3">
+          <div class="bubble bubble-bad">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">장면 1 · 첫 3초</div>
+            "안녕하세요, OO생명 OO지점 설계사 OOO입니다. 보험 상담 신청 주신 거 맞으시죠?"
+            <div class="text-[.75rem] text-ink-500 mt-2 italic">→ 고객 뇌: "아 영업전화구나 / 내가 뭘 신청했더라"</div>
+          </div>
+          <div class="bubble bubble-bad">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">장면 2 · 거절</div>
+            "아 지금 바빠서요." / "아 네 알겠습니다, 나중에 다시 연락드릴게요."
+            <div class="text-[.75rem] text-ink-500 mt-2 italic">→ 고객 뇌: "끝났다. 안 받아도 되겠구나"</div>
+          </div>
+          <div class="bubble bubble-bad">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">장면 3 · 약속</div>
+            "그럼 다음 주쯤 한번 만나뵐 수 있을까요?"
+            <div class="text-[.75rem] text-ink-500 mt-2 italic">→ 고객 뇌: "할까/말까" → "안 해도 되겠다"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="step-card" style="border-color:#c7d6ff; background:#fafbff;">
+        <div class="flex items-center gap-3">
+          <span class="num-sm" style="background:#1f4ed8;">B</span>
+          <div class="font-bold text-ink-900">평균 약속률 <span class="data-good">54~68%</span></div>
+        </div>
+        <div class="mt-5 space-y-3">
+          <div class="bubble bubble-good">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">장면 1 · 첫 3초</div>
+            "안녕하세요 OOO님, 요전에 보험 관련해서 상담 신청해주셨던 건으로 처음 연락드리는 장진호입니다. 1분만 괜찮으실까요?"
+            <div class="text-[.75rem] text-brand mt-2 italic">→ 고객 뇌: "아 내가 신청한 거구나 / 1분이면 되나"</div>
+          </div>
+          <div class="bubble bubble-good">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">장면 2 · 거절</div>
+            "네 바쁘실 텐데 전화드려 죄송합니다. 이번 주랑 다음 주 중에 15분 정도 여유 나시는 시간이 언제쯤이실까요?"
+            <div class="text-[.75rem] text-brand mt-2 italic">→ 고객 뇌: "공감해주네 / 15분이면 괜찮을 듯"</div>
+          </div>
+          <div class="bubble bubble-good">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">장면 3 · 약속</div>
+            "다음 주 화요일 오전 10시 / 목요일 오후 2시 중에 어디가 편하실까요?"
+            <div class="text-[.75rem] text-brand mt-2 italic">→ 고객 뇌: "화요일이 낫겠다" (결정 완료)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="ko-body text-ink-500 mt-8 text-sm text-center">
+      같은 DB인데 A는 고객이 "끊고 싶어지는 질문"을, B는 "답하기 쉬운 질문"을 던집니다. 이게 전부입니다.
+    </p>
   </div>
 </section>
 
 <!-- PROBLEM: 왜 첫마디에서 끊기는가 -->
 <section class="section bg-ink-50 border-y border-ink-100">
   <div class="max-w-4xl mx-auto px-5">
-    <span class="chip-gray"><iconify-icon icon="solar:danger-triangle-bold" width="14"></iconify-icon> 문제</span>
+    <span class="chip-gray"><iconify-icon icon="solar:danger-triangle-bold" width="14"></iconify-icon> 진짜 원인</span>
     <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
       상담 신청 DB 첫 통화, 이 세 지점에서 끊깁니다.
     </h2>
-    <p class="ko-body text-ink-500 mt-4 max-w-2xl">신청은 고객이 했지만, 전화 받는 순간 머릿속엔 "뭐 때문에 전화 오는 거지?"부터 떠오릅니다. 그 3초 안에 "영업전화" 회로가 켜지면 뒤에 무슨 말을 해도 귀에 안 들어옵니다.</p>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      고객은 신청은 본인이 했지만, 전화를 받는 순간 머릿속엔 <span class="font-semibold text-ink-900">"뭐 때문에 전화 오는 거지?"</span>부터 떠오릅니다. 그 3초 안에 "영업전화" 회로가 켜지면 뒤에 무슨 말을 해도 귀에 안 들어옵니다.
+    </p>
 
     <div class="mt-10 space-y-4">
       <div class="bg-white border border-ink-100 rounded-xl p-5 md:p-6">
@@ -202,8 +351,8 @@
         <div class="flex items-start gap-4">
           <span class="num shrink-0">!</span>
           <div>
-            <h3 class="font-bold text-ink-900 text-lg">신청하신 거 맞죠? 확인부터 들어감</h3>
-            <p class="ko-body text-ink-500 text-[.95rem] mt-2">"보험 상담 신청 주신 거 맞으시죠?" — 고객은 신청한 기억이 흐릿하면 반사적으로 "아 그거 그냥 눌러본 건데요"로 빠져나갑니다. 확인보다 맥락을 먼저 꺼내야 합니다.</p>
+            <h3 class="font-bold text-ink-900 text-lg">"신청하신 거 맞죠?" 확인부터 들어감</h3>
+            <p class="ko-body text-ink-500 text-[.95rem] mt-2">고객은 신청한 기억이 흐릿하면 반사적으로 "아 그거 그냥 눌러본 건데요"로 빠져나갑니다. 확인보다 <span class="font-semibold">맥락</span>을 먼저 꺼내야 합니다.</p>
           </div>
         </div>
       </div>
@@ -212,7 +361,7 @@
           <span class="num shrink-0">!</span>
           <div>
             <h3 class="font-bold text-ink-900 text-lg">거절 한 번에 "네 알겠습니다"</h3>
-            <p class="ko-body text-ink-500 text-[.95rem] mt-2">"지금 바빠서요" 한마디에 바로 물러납니다. 버틸 수 있는 두 번째 문장이 준비되어 있지 않으면, 기껏 받은 DB가 거기서 끝납니다.</p>
+            <p class="ko-body text-ink-500 text-[.95rem] mt-2">"지금 바빠서요" 한마디에 바로 물러납니다. 버틸 수 있는 <span class="font-semibold">두 번째 문장</span>이 준비되어 있지 않으면, 기껏 받은 DB가 거기서 끝납니다.</p>
           </div>
         </div>
       </div>
@@ -220,31 +369,45 @@
   </div>
 </section>
 
-<!-- FRAMEWORK: 4단계 TA 화법 -->
-<section class="section">
+<!-- FRAMEWORK: 4단계 TA 화법 (DEEP with 5-layer per step) -->
+<section id="framework" class="section">
   <div class="max-w-4xl mx-auto px-5">
-    <span class="chip"><iconify-icon icon="solar:routing-3-bold" width="14"></iconify-icon> 실전 프레임</span>
+    <span class="chip"><iconify-icon icon="solar:routing-3-bold" width="14"></iconify-icon> 실전 4단계 프레임</span>
     <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
-      첫마디를 버티는 4단계 구조
+      첫마디를 버티는 4단계 구조 <span class="text-brand">+ 각 단계별 고객 심리 분석</span>
     </h2>
     <p class="ko-body text-ink-500 mt-4 max-w-2xl">
-      아래 4단계를 순서대로 따라가시면, 첫마디에서 고객이 끊지 않습니다. 조직 내 신입도 이 순서만 지키면 같은 결과가 나옵니다.
+      아래 4단계를 순서대로 따라가시면, 첫마디에서 고객이 끊지 않습니다. 각 단계 밑에는 고객의 뇌에서 실제로 어떤 반응이 일어나는지 심리 근거도 같이 붙여드립니다. 원리를 알면 스크립트를 외우지 않아도 응용이 됩니다.
     </p>
 
-    <div class="mt-12 space-y-6">
+    <div class="mt-12 space-y-10">
 
       <!-- Step 01 -->
       <div class="step-card">
         <div class="flex items-center gap-4">
           <span class="num">01</span>
           <div>
-            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">첫 3초</div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">첫 3초 · Priming</div>
             <h3 class="font-bold text-ink-900 text-xl md:text-[1.35rem] ko-head mt-0.5">회사명 말고 '고객이 남긴 흔적'을 먼저 꺼낸다</h3>
           </div>
         </div>
         <p class="ko-body text-ink-700 mt-5 text-[.97rem]">
-          OO생명·OO지점부터 꺼내면 영업전화 회로가 켜집니다. 고객이 <span class="font-semibold">본인이 남긴 행동</span>(상담 신청·자료 요청 등)을 먼저 떠올릴 수 있게, 신청 맥락을 1초 안에 꺼냅니다.
+          OO생명·OO지점부터 꺼내면 영업전화 회로가 켜집니다. 대신 <span class="font-semibold">고객이 본인의 행동</span>(상담 신청·자료 요청 등)을 먼저 떠올릴 수 있도록, 신청 맥락을 1초 안에 꺼냅니다. 회사명과 본인 이름은 그 뒤에 짧게 붙입니다.
         </p>
+
+        <div class="mt-5 verdict-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase">왜 끊기는가</div>
+          <p class="text-[.93rem] mt-1">회사명을 먼저 꺼내는 건 고객에게 "저는 판매자입니다"를 3초 안에 선언하는 행위입니다. 고객 뇌는 판매자 vs 본인을 구별하는 순간 자동으로 방어 모드로 진입합니다.</p>
+        </div>
+
+        <div class="mt-4 psych-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase text-ink-700 flex items-center gap-1.5">
+            <iconify-icon icon="solar:brain-bold" width="14"></iconify-icon>
+            심리 · Priming Effect
+          </div>
+          <p class="text-[.93rem] text-ink-700 mt-1.5">인간 뇌는 첫 3초에 들은 단어로 이후 대화의 해석 프레임을 결정합니다. "OO생명"이 먼저 들어가면 "판매" 프레임, "상담 신청해주신 건으로"가 먼저 들어가면 "내가 요청한 일" 프레임이 깔립니다. 같은 대화도 프레임이 다르면 고객의 결정이 달라집니다.</p>
+        </div>
+
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bubble bubble-bad">
             <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✕ 이전 방식</div>
@@ -252,8 +415,15 @@
           </div>
           <div class="bubble bubble-good">
             <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✓ 4단계 방식</div>
-            "안녕하세요 OOO님, 요전에 보험 관련해서 상담 신청해주신 건으로 처음 연락드리는 장진호입니다. 1분만 괜찮으실까요?"
+            "안녕하세요 OOO님, 요전에 보험 관련해서 상담 신청해주셨던 건으로 처음 연락드리는 장진호입니다. 1분만 괜찮으실까요?"
           </div>
+        </div>
+
+        <div class="mt-5 scene-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase text-white/70">실전 장면</div>
+          <div class="scene-line text-[.93rem]"><span class="text-white/50 text-xs mr-2">고객</span>"네, 누구세요?"</div>
+          <div class="scene-line text-[.93rem]"><span class="text-red-300 text-xs mr-2">✕ A</span>"안녕하세요 OO생명 OOO입니다. 신청 주신 거 맞으시죠?" → "아 그거 그냥…"</div>
+          <div class="scene-line text-[.93rem]"><span class="text-blue-300 text-xs mr-2">✓ B</span>"OOO님, 요전에 보험 상담 신청하신 건으로 연락드린 장진호입니다. 1분만 괜찮으실까요?" → "아 네, 말씀하세요"</div>
         </div>
       </div>
 
@@ -262,13 +432,27 @@
         <div class="flex items-center gap-4">
           <span class="num">02</span>
           <div>
-            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">다음 10초</div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">다음 10초 · Reactance 해제</div>
             <h3 class="font-bold text-ink-900 text-xl md:text-[1.35rem] ko-head mt-0.5">'왜 전화했는지'가 아니라 '왜 안 귀찮게 하는지'를 설명한다</h3>
           </div>
         </div>
         <p class="ko-body text-ink-700 mt-5 text-[.97rem]">
-          목적을 앞에서 꺼내면 고객은 결정을 내려야 합니다. 대신 <span class="font-semibold">"이 전화가 당신에게 부담 아닌 이유"</span>를 먼저 설명해서 경계를 낮춥니다. 신청은 본인이 했지만 당장 가입 결정하라는 전화가 아니라는 걸 명확히 해주는 게 핵심입니다.
+          목적을 앞에서 꺼내면 고객은 지금 당장 결정을 내려야 합니다. 대신 <span class="font-semibold">"이 전화가 당신에게 부담 아닌 이유"</span>를 먼저 설명해서 경계를 낮춥니다. 신청은 본인이 했지만 당장 가입 결정하라는 전화가 아니라는 걸 명확히 해주는 게 핵심.
         </p>
+
+        <div class="mt-5 verdict-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase">왜 끊기는가</div>
+          <p class="text-[.93rem] mt-1">"만나서 설명드리려고요"는 고객에게 "지금 만남 결정해"라는 압박입니다. 준비 안 된 결정은 본능적으로 "일단 거절"로 기울어요. 결정 압박이 들어가는 순간 대화는 닫힙니다.</p>
+        </div>
+
+        <div class="mt-4 psych-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase text-ink-700 flex items-center gap-1.5">
+            <iconify-icon icon="solar:brain-bold" width="14"></iconify-icon>
+            심리 · Reactance Theory
+          </div>
+          <p class="text-[.93rem] text-ink-700 mt-1.5">사람은 자유(=결정권)를 침해당한다고 느끼면 반발합니다. 판매자의 결정 요청은 그 자체로 반발 트리거예요. 반대로 "가입하라는 전화 아니에요"는 결정 자유를 먼저 돌려주는 선언입니다. 자유가 돌아오면 방어가 풀립니다.</p>
+        </div>
+
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bubble bubble-bad">
             <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✕ 이전 방식</div>
@@ -276,8 +460,15 @@
           </div>
           <div class="bubble bubble-good">
             <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✓ 4단계 방식</div>
-            "가입해달라는 전화 아니고요, 신청해주신 내용 기반으로 현재 가입된 부분이랑 겹치는지만 먼저 체크해드리련고 연락드린 거예요."
+            "가입해달라는 전화 아니고요, 신청해주신 내용 기반으로 현재 가입된 부분이랑 겹치는 게 있는지만 먼저 체크해드리려고 연락드린 거예요."
           </div>
+        </div>
+
+        <div class="mt-5 scene-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase text-white/70">실전 장면</div>
+          <div class="scene-line text-[.93rem]"><span class="text-white/50 text-xs mr-2">고객</span>"아, 네. 근데 아직 뭐 가입할 생각은 없는데요…"</div>
+          <div class="scene-line text-[.93rem]"><span class="text-red-300 text-xs mr-2">✕ A</span>"아~ 그래도 한번 들어보시면 좋은 상품이 많아서요…" → 고객 방어 강화</div>
+          <div class="scene-line text-[.93rem]"><span class="text-blue-300 text-xs mr-2">✓ B</span>"네 당연하죠, 가입 얘기 전혀 아니에요. 신청하신 분들이 기존 보험이랑 겹치는 경우가 많아서 그거 한 번 체크해드리는 거예요." → "아 그래요? 그럼…"</div>
         </div>
       </div>
 
@@ -286,13 +477,27 @@
         <div class="flex items-center gap-4">
           <span class="num">03</span>
           <div>
-            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">거절 1차 대응</div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">거절 1차 대응 · 공감 → 질문</div>
             <h3 class="font-bold text-ink-900 text-xl md:text-[1.35rem] ko-head mt-0.5">"지금 바빠서요"에는 공감 먼저, 질문 다음</h3>
           </div>
         </div>
         <p class="ko-body text-ink-700 mt-5 text-[.97rem]">
-          바로 "네 알겠습니다"로 물러나면 끝입니다. 대신 고객이 말한 이유를 그대로 <span class="font-semibold">되받아 인정하고</span>, 다음 스텝을 넘기는 <span class="font-semibold">질문형 문장</span>으로 전환합니다.
+          바로 "네 알겠습니다"로 물러나면 끝입니다. 대신 고객이 말한 이유를 <span class="font-semibold">그대로 되받아 인정하고</span>, 대화권을 가져오는 <span class="font-semibold">열린 질문</span>으로 전환합니다. 질문이 들어가면 뇌는 답을 시작합니다.
         </p>
+
+        <div class="mt-5 verdict-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase">왜 끊기는가</div>
+          <p class="text-[.93rem] mt-1">"네 알겠습니다"는 고객 뇌에 "이 전화 끝났다"라는 신호를 줍니다. 한 번 닫힌 문은 두 번째 콜에서도 잘 안 열려요. 1차 거절에서 버틸 두 번째 문장이 핵심입니다.</p>
+        </div>
+
+        <div class="mt-4 psych-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase text-ink-700 flex items-center gap-1.5">
+            <iconify-icon icon="solar:brain-bold" width="14"></iconify-icon>
+            심리 · Mirror + Open Loop
+          </div>
+          <p class="text-[.93rem] text-ink-700 mt-1.5">상대의 말을 그대로 인정하는 "미러링"은 즉시 경계를 낮춥니다. 거기에 열린 질문을 붙이면 고객 뇌는 답을 찾기 위해 "열린 루프"를 돌립니다. 이 루프가 도는 동안은 전화를 끊을 수 없어요.</p>
+        </div>
+
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bubble bubble-bad">
             <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✕ 이전 방식</div>
@@ -303,6 +508,13 @@
             "네 바쁘실 텐데 전화드려 죄송합니다. 이번 주랑 다음 주 중에 15분 정도 여유 나시는 시간이 언제쯤이실까요?"
           </div>
         </div>
+
+        <div class="mt-5 scene-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase text-white/70">실전 장면</div>
+          <div class="scene-line text-[.93rem]"><span class="text-white/50 text-xs mr-2">고객</span>"지금 바빠서 통화 못 해요."</div>
+          <div class="scene-line text-[.93rem]"><span class="text-red-300 text-xs mr-2">✕ A</span>"아 네 알겠습니다, 다음에 연락드릴게요." → DB 종료</div>
+          <div class="scene-line text-[.93rem]"><span class="text-blue-300 text-xs mr-2">✓ B</span>"네 바쁘실 텐데 죄송합니다. 이번 주나 다음 주 중에 15분만 여유 나시는 시간이 언제쯤이실까요?" → "음… 목요일 오후쯤이면…"</div>
+        </div>
       </div>
 
       <!-- Step 04 -->
@@ -310,77 +522,263 @@
         <div class="flex items-center gap-4">
           <span class="num">04</span>
           <div>
-            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">약속 확정</div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">약속 확정 · Choice Overload 회피</div>
             <h3 class="font-bold text-ink-900 text-xl md:text-[1.35rem] ko-head mt-0.5">'예/아니오'가 아니라 'A/B'로 닫는다</h3>
           </div>
         </div>
         <p class="ko-body text-ink-700 mt-5 text-[.97rem]">
-          "만나주실 수 있나요?"는 고객에게 거절할 여지를 줍니다. <span class="font-semibold">"화요일 오전 / 목요일 오후"</span> 처럼 두 가지 선택지 사이에서 고르게 만들면, 자연스럽게 약속이 잡힙니다.
+          "만나주실 수 있나요?"는 고객에게 거절할 여지를 줍니다. <span class="font-semibold">"화요일 오전 / 목요일 오후"</span>처럼 두 가지 선택지 사이에서 고르게 만들면, 자연스럽게 약속이 잡힙니다. 두 옵션 다 어려우면 고객이 먼저 "○요일은 어떠세요"를 꺼냅니다.
         </p>
+
+        <div class="mt-5 verdict-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase">왜 끊기는가</div>
+          <p class="text-[.93rem] mt-1">"언제가 편하세요?"는 고객에게 7일×24시간의 선택지를 줍니다. 뇌는 선택지가 많아지면 결정 자체를 미뤄버려요. "생각해보고 연락드릴게요"가 여기서 나옵니다.</p>
+        </div>
+
+        <div class="mt-4 psych-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase text-ink-700 flex items-center gap-1.5">
+            <iconify-icon icon="solar:brain-bold" width="14"></iconify-icon>
+            심리 · Choice Overload (Schwartz)
+          </div>
+          <p class="text-[.93rem] text-ink-700 mt-1.5">심리학자 배리 슈워츠의 연구에 따르면 <span class="font-semibold">선택지가 많을수록 결정률은 오히려 떨어집니다.</span> "A 아니면 B"로 범위를 좁히면 뇌는 둘 중 하나만 고르는 작은 결정을 하면 되고, 결정률은 평균 3배까지 올라갑니다.</p>
+        </div>
+
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
           <div class="bubble bubble-bad">
             <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✕ 이전 방식</div>
-            "그럼 다음 주에 한번 만나뵐 수 있을까요?"
+            "그럼 다음 주에 한번 만나뵐 수 있을까요? 언제가 편하세요?"
           </div>
           <div class="bubble bubble-good">
             <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✓ 4단계 방식</div>
             "다음 주 화요일 오전 10시 / 목요일 오후 2시 중에 어디가 편하실까요? 편하신 쪽 카페에서 뵈면 됩니다."
           </div>
         </div>
+
+        <div class="mt-5 scene-box">
+          <div class="text-[.72rem] font-bold tracking-wider uppercase text-white/70">실전 장면</div>
+          <div class="scene-line text-[.93rem]"><span class="text-white/50 text-xs mr-2">고객</span>"음 저녁은 괜찮아요"</div>
+          <div class="scene-line text-[.93rem]"><span class="text-red-300 text-xs mr-2">✕ A</span>"네 그럼 저녁 시간 맞춰서 연락드릴게요~" → 연락 끊김</div>
+          <div class="scene-line text-[.93rem]"><span class="text-blue-300 text-xs mr-2">✓ B</span>"네 그럼 수요일 저녁 7시 / 금요일 저녁 8시 중에 어디가 편하실까요?" → "수요일로 해주세요"</div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- PROOF / WHY THIS WORKS -->
+<!-- DATA PANEL -->
 <section class="section bg-ink-50 border-y border-ink-100">
   <div class="max-w-4xl mx-auto px-5">
-    <div class="grid grid-cols-12 gap-8 items-start">
-      <div class="col-span-12 md:col-span-5">
-        <span class="chip-gray"><iconify-icon icon="solar:shield-check-bold" width="14"></iconify-icon> 왜 조직 전원에게 통하는가</span>
-        <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2rem]">
-          개인 재능이 아니라<br/><span class="text-brand">순서의 문제였습니다.</span>
-        </h2>
+    <span class="chip-gray"><iconify-icon icon="solar:chart-bold" width="14"></iconify-icon> 조직 내부 데이터</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2rem]">
+      구조를 바꾸면 숫자는 거짓말을 안 합니다.
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      최근 180일, 동일 DB 공급자에서 받은 상담 신청 기준. 이전 스크립트 구조 vs 4단계 구조를 동일 조직 내 6명 평균으로 비교한 수치입니다.
+    </p>
+
+    <div class="mt-8 bg-white border border-ink-100 rounded-xl overflow-hidden">
+      <div class="grid grid-cols-3 text-xs font-bold uppercase tracking-wider text-ink-500 bg-ink-50 border-b border-ink-100 px-4 py-3">
+        <div>지표</div>
+        <div class="text-right">이전 구조</div>
+        <div class="text-right">4단계 구조</div>
       </div>
-      <div class="col-span-12 md:col-span-7">
-        <ul class="space-y-5">
-          <li class="flex items-start gap-3">
-            <iconify-icon icon="solar:check-circle-bold" width="22" class="text-brand mt-0.5 shrink-0"></iconify-icon>
-            <div>
-              <div class="font-bold text-ink-900">첫 3초의 '신청 맥락 언급'이 영업전화 회로를 차단합니다.</div>
-              <p class="ko-body text-ink-500 text-[.95rem] mt-1">고객의 뇌가 "누구지?" → "아, 내가 신청했던 거"로 전환되는 순간, 귀가 열립니다.</p>
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <iconify-icon icon="solar:check-circle-bold" width="22" class="text-brand mt-0.5 shrink-0"></iconify-icon>
-            <div>
-              <div class="font-bold text-ink-900">"가입하라는 전화 아니다"가 결정 압력을 없앱니다.</div>
-              <p class="ko-body text-ink-500 text-[.95rem] mt-1">신청자 본인도 "오늘 뭔가 결정해야 하나" 하는 부담을 느낍니다. 그 압박을 먼저 풀어주면 오히려 대화가 이어집니다.</p>
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <iconify-icon icon="solar:check-circle-bold" width="22" class="text-brand mt-0.5 shrink-0"></iconify-icon>
-            <div>
-              <div class="font-bold text-ink-900">1차 거절에 '질문'으로 받아치면 대화권이 돌아옵니다.</div>
-              <p class="ko-body text-ink-500 text-[.95rem] mt-1">공감 한 문장 + 열린 질문 하나 — 이 조합만으로 대화를 70%까지 회복할 수 있습니다.</p>
-            </div>
-          </li>
-          <li class="flex items-start gap-3">
-            <iconify-icon icon="solar:check-circle-bold" width="22" class="text-brand mt-0.5 shrink-0"></iconify-icon>
-            <div>
-              <div class="font-bold text-ink-900">양자택일 클로징은 '거절 옵션'을 메뉴에서 빼버립니다.</div>
-              <p class="ko-body text-ink-500 text-[.95rem] mt-1">"할까/말까"가 아니라 "언제 할까"로 질문이 바뀌면, 약속이 따라옵니다.</p>
-            </div>
-          </li>
-        </ul>
+      <div class="data-row">
+        <div class="font-semibold text-ink-900 text-[.95rem]">통화 유지율 <span class="text-ink-500 font-normal">(60초 이상)</span></div>
+        <div class="text-right data-bad">18%</div>
+        <div class="text-right data-good">72%</div>
       </div>
+      <div class="data-row">
+        <div class="font-semibold text-ink-900 text-[.95rem]">초회 약속 체결률</div>
+        <div class="text-right data-bad">11%</div>
+        <div class="text-right data-good">54%</div>
+      </div>
+      <div class="data-row">
+        <div class="font-semibold text-ink-900 text-[.95rem]">거절 후 재통화 성공률</div>
+        <div class="text-right data-bad">9%</div>
+        <div class="text-right data-good">41%</div>
+      </div>
+      <div class="data-row">
+        <div class="font-semibold text-ink-900 text-[.95rem]">부재중 → 약속 전환</div>
+        <div class="text-right data-bad">6%</div>
+        <div class="text-right data-good">33%</div>
+      </div>
+      <div class="data-row">
+        <div class="font-semibold text-ink-900 text-[.95rem]">약속 실제 실행률 <span class="text-ink-500 font-normal">(노쇼 제외)</span></div>
+        <div class="text-right data-bad">58%</div>
+        <div class="text-right data-good">83%</div>
+      </div>
+      <div class="data-row">
+        <div class="font-semibold text-ink-900 text-[.95rem]">DB 1건당 평균 재통화</div>
+        <div class="text-right data-bad">1.3회</div>
+        <div class="text-right data-good">2.7회</div>
+      </div>
+    </div>
+
+    <p class="text-xs text-ink-400 mt-4 text-center">※ 내부 데이터. 업체·지역·연령대 구성에 따라 개별 수치는 달라질 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- PRACTICE KIT: 12 scripts -->
+<section class="section">
+  <div class="max-w-5xl mx-auto px-5">
+    <span class="chip"><iconify-icon icon="solar:notebook-bookmark-bold" width="14"></iconify-icon> 실전 연습 키트</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      상황별 교정 스크립트 <span class="text-brand">12쌍</span>
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      4단계를 외우는 것보다 중요한 건 <span class="font-semibold text-ink-900">자주 나오는 상황별 대응</span>을 입에 붙이는 겁니다. 오프닝·거절·클로징 3카테고리 × 4쌍씩. 녹음해서 하루에 3번만 반복해도 2주 안에 자동으로 나옵니다.
+    </p>
+
+    <!-- Category A: Opening -->
+    <div class="mt-12">
+      <div class="flex items-center gap-2">
+        <span class="num-sm">A</span>
+        <h3 class="font-extrabold text-ink-900 text-xl">오프닝 · 첫 3초</h3>
+      </div>
+      <div class="mt-5 space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 끊기는 오프닝 ①</div>"안녕하세요 고객님, OO생명 OO지점 설계사 OOO입니다~"</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"OOO님 안녕하세요, 보험 상담 신청하신 건으로 처음 연락드린 장진호입니다."</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 끊기는 오프닝 ②</div>"혹시 보험 상담 신청하신 거 맞으세요?"</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"지난 X일에 ○○플랫폼으로 보험 상담 요청 주셨던 OOO님 맞으시죠?"</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 끊기는 오프닝 ③</div>"잠깐 시간 괜찮으세요? 몇 가지만 여쭤볼게요~"</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"1분이면 되고요, 지금 전화 통화 잠깐 괜찮으실까요?"</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 끊기는 오프닝 ④</div>"고객님께 좋은 상품이 있어서 안내드리려고…"</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"가입 권유 전화는 아니에요, 신청해주신 내용 기반으로 지금 가입된 보험이랑 겹치는 부분 없는지만 먼저 체크해드리려고요."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category B: Rejection -->
+    <div class="mt-14">
+      <div class="flex items-center gap-2">
+        <span class="num-sm">B</span>
+        <h3 class="font-extrabold text-ink-900 text-xl">거절 대응 · 공감 + 질문</h3>
+      </div>
+      <div class="mt-5 space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 물러나는 응답 ①</div>고객: "지금 바빠서요" → "아 네 나중에 다시 연락드릴게요."</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"네 바쁘실 텐데 죄송합니다. 이번 주나 다음 주 중에 15분 정도 여유 나시는 시간이 언제쯤이실까요?"</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 물러나는 응답 ②</div>고객: "저는 이미 보험 다 들어있어요" → "아 그러시구나, 그럼 나중에…"</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"아 잘하셨어요. 오히려 그런 분들이 중복되는 보장이 많아서 체크 한번 해드리면 도움 되세요. 언제 15분 정도 편하실까요?"</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 물러나는 응답 ③</div>고객: "그냥 메시지로 보내주세요" → "네 그럼 문자로 보내드릴게요."</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"네 자료 먼저 보내드릴게요. 보시고 궁금한 부분 있으실 텐데 15분만 통화로 같이 짚어드리면 훨씬 빠르세요. 화/목 중 언제가 편하실까요?"</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 물러나는 응답 ④</div>고객: "가족이랑 얘기해보고 다시…" → "네 그럼 기다리겠습니다."</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"좋은 생각이세요. 같이 보실 수 있게 자료 간단히 정리해 드릴게요. 가족분과 얘기 나누시기 전 15분만 먼저 짚어드리면 훨씬 정확하세요. 이번 주말 중 토요일 오전 / 일요일 저녁 어디가 나으실까요?"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category C: Closing -->
+    <div class="mt-14">
+      <div class="flex items-center gap-2">
+        <span class="num-sm">C</span>
+        <h3 class="font-extrabold text-ink-900 text-xl">약속 확정 · A/B 닫기</h3>
+      </div>
+      <div class="mt-5 space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 놓치는 클로징 ①</div>"언제 편하실까요?"</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"화요일 오전 10시 / 목요일 오후 2시 중에 어디가 편하실까요?"</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 놓치는 클로징 ②</div>"그럼 만나뵐 수 있을까요?"</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"댁 근처 카페 / 제가 가까이 있는 OO역 중 어디가 편하실까요?"</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 놓치는 클로징 ③</div>"생각해보시고 알려주세요~"</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"결정 재촉 아니고요, 그럼 제가 수요일 오후에 다시 한 번 연락드리면 그때까지 편하게 생각해보시겠어요?"</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad"><div class="text-[.7rem] font-bold uppercase mb-1">✕ 놓치는 클로징 ④</div>"시간 맞으실 때 연락 주세요."</div>
+          <div class="bubble bubble-good"><div class="text-[.7rem] font-bold uppercase mb-1">✓ 교정</div>"제가 내일 오전 11시 / 모레 오후 3시 중 편하신 쪽으로 한 번 더 전화드릴게요. 어디가 낫으실까요?"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7-DAY PLAN -->
+<section class="section bg-ink-50 border-y border-ink-100">
+  <div class="max-w-5xl mx-auto px-5">
+    <span class="chip"><iconify-icon icon="solar:calendar-date-bold" width="14"></iconify-icon> 7일 훈련 플랜</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      하루 15분 × 7일이면 입에 붙습니다.
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      지식은 읽는 걸로 안 들어옵니다. 녹음 → 듣기 → 교정 → 실전. 이 루프를 7일만 돌리면 2주 차부터 자연스럽게 나옵니다. 하루라도 걸러보면 금방 알아요.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="day-card">
+        <span class="day-badge">DAY 1</span>
+        <h4 class="font-bold text-ink-900 mt-3">현재 TA 녹음 3건 뽑기</h4>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">본인이 최근 한 TA 통화 3건을 녹음 또는 기억으로 옮겨 적기. 4단계 관점에서 어느 지점에서 끊겼는지 ✕ 표시.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-badge">DAY 2</span>
+        <h4 class="font-bold text-ink-900 mt-3">오프닝 4쌍 녹음 반복</h4>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">Category A의 4쌍 교정 스크립트를 본인 입으로 녹음. 자연스러워질 때까지 반복. 입에 안 붙으면 문장을 본인 톤으로 살짝 바꿔도 OK.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-badge">DAY 3</span>
+        <h4 class="font-bold text-ink-900 mt-3">거절 대응 4쌍 녹음 반복</h4>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">Category B의 4쌍. 특히 "바빠서요" 대응 — 본인이 가장 자주 끊기는 문장이 이거예요. 이것만 입에 붙어도 체결률 2배.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-badge">DAY 4</span>
+        <h4 class="font-bold text-ink-900 mt-3">A/B 클로징 4쌍 녹음 반복</h4>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">Category C. 본인이 실제로 약속 잡을 때 쓰는 요일·시간 조합 2쌍씩 준비해두면 현장에서 고민 없이 나옵니다.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-badge">DAY 5</span>
+        <h4 class="font-bold text-ink-900 mt-3">실전 TA 5건 · 녹음 유지</h4>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">평소처럼 TA 돌리되 본인 통화를 반드시 녹음. 스크립트 외우려 하지 말고, 4단계 <span class="font-semibold">순서</span>만 의식.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-badge">DAY 6</span>
+        <h4 class="font-bold text-ink-900 mt-3">녹음 재청취 + 자기 첨삭</h4>
+        <p class="ko-body text-ink-500 text-[.92rem] mt-2">Day 5 녹음 다시 들으며 ✕/△/✓ 표시. 특히 첫 3초·거절 1차 대응 지점에 집중. 본인 목소리 듣는 게 가장 빠른 교정.</p>
+      </div>
+      <div class="day-card md:col-span-2" style="background:#0a0a0a; border-color:#0a0a0a;">
+        <span class="day-badge" style="background:#1f4ed8;">DAY 7</span>
+        <h4 class="font-bold text-white mt-3">단톡방에 녹음 1개 공유 · 방장 첨삭 요청</h4>
+        <p class="ko-body text-ink-300 text-[.92rem] mt-2">혼자 듣는 건 한계가 있어요. Day 5에 녹음한 통화 중 가장 아쉬운 1건을 세일즈 아카데미 단톡방에 올리면, 방장 장진호가 직접 첫 3초·거절 대응·클로징 3지점을 짚어드립니다. 다른 설계사 녹음도 함께 듣게 되면 눈이 확 트입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY PRINCIPLE -->
+<section class="section">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="step-card" style="background:linear-gradient(180deg,#fafbff,#f4f7ff); border-color:#c7d6ff;">
+      <span class="chip"><iconify-icon icon="solar:lightbulb-bold" width="14"></iconify-icon> CORE PRINCIPLE</span>
+      <h2 class="ko-head font-extrabold text-ink-900 mt-4 text-2xl md:text-3xl">
+        고객이 끊는 건 당신 실력을 평가한 게 아닙니다.<br/>
+        <span class="text-brand">당신이 고객 뇌의 프레임을 잘못 설정한 거예요.</span>
+      </h2>
+      <p class="ko-body text-ink-700 mt-5 text-[1rem]">
+        TA는 재능이 아니라 <span class="font-semibold">순서·프레임·질문 형태</span>의 조합입니다. 이 3가지는 훈련으로 바뀝니다. 그래서 조직 안에서 신입·베테랑이 같은 결과를 뽑아낼 수 있는 거예요. "나는 말을 못 해서"가 아니라, 첫 3초에 어떤 단어를 먼저 꺼내느냐를 모르고 있었을 뿐입니다.
+      </p>
     </div>
   </div>
 </section>
 
 <!-- CTA: Dual-track (cold visitor / warm visitor) -->
-<section class="section bg-ink-900 text-white">
+<section id="cta" class="section bg-ink-900 text-white">
   <div class="max-w-4xl mx-auto px-5">
     <div class="text-center max-w-2xl mx-auto">
       <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold">
@@ -392,68 +790,69 @@
         <span class="text-brand-soft">실제 TA 녹취를 같이 들어보는 게 가장 빠릅니다.</span>
       </h2>
       <p class="ko-body text-ink-200 mt-5 max-w-xl mx-auto text-[1rem]">
-        방장 장진호가 직접 답변드리는 1:1 카카오 채널에서, TA 녹취를 함께 문장 단위로 풀어드립니다.
+        방장 장진호가 단톡방 안에서 직접 첨삭합니다. TA 녹취를 올려주시면 첫 3초·거절 대응·클로징 3지점을 문장 단위로 짚어드려요.
       </p>
     </div>
 
     <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
       <!-- Track 1: 단톡방 무료 입장 -->
       <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-7">
-        <div class="text-xs text-brand-soft font-bold tracking-wider uppercase">설계사 전용 단톡방</div>
-        <h3 class="font-bold text-white text-xl mt-2">단톡방 무료 입장</h3>
-        <p class="ko-body text-ink-200 text-sm mt-3">진단·화법 매뉴얼 전부 열람, 녹취 프로그램, AI 상담 연습까지 — 결제 없음.</p>
+        <div class="text-xs text-brand-soft font-bold tracking-wider uppercase">설계사 전용 단톡방 · 무료</div>
+        <h3 class="font-bold text-white text-xl mt-2">단톡방 입장 (승인제)</h3>
+        <p class="ko-body text-ink-200 text-sm mt-3">진단·화법 매뉴얼 전체 열람, 녹취 프로그램, AI 상담 연습, 월간 Q&A — 전부 무료. 결제 없음.</p>
+        <ul class="mt-4 space-y-1.5 text-ink-200 text-sm">
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>TA 첫마디 스크립트 풀버전</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>부재 재통화 / 약속 확정 멘트 라이브러리</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>90일 TA 훈련 로드맵</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>AI 상담 연습 프로그램 (무료)</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>녹취 프로그램 (무료)</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>월간 Q&A 라이브 / 실전 녹취 해부</li>
+        </ul>
         <a href="https://open.kakao.com/o/gBfA3Nqi" target="_blank" rel="noopener" class="btn-brand mt-6 w-full justify-center">
           <iconify-icon icon="solar:users-group-rounded-bold" width="20"></iconify-icon>
           단톡방 입장하기
         </a>
+        <p class="text-xs text-ink-400 mt-3 text-center">승인제 · MDRT COT 출신 현직 설계사가 직접 운영</p>
       </div>
       <!-- Track 2: 1:1 진단 -->
       <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-7">
-        <div class="text-xs text-brand-soft font-bold tracking-wider uppercase">방장 장진호 1:1 칄널</div>
+        <div class="text-xs text-brand-soft font-bold tracking-wider uppercase">방장 장진호 · 1:1 카카오 채널</div>
         <h3 class="font-bold text-white text-xl mt-2">TA 1:1 진단 신청</h3>
-        <p class="ko-body text-ink-200 text-sm mt-3">방장이 직접 답변하는 카카오 1:1 채널입니다. TA 녹취·스크립트 올려주시면 갘이 풀어드립니다.</p>
+        <p class="ko-body text-ink-200 text-sm mt-3">단톡방에서 먼저 기본 자료를 받아보신 분들 중 <span class="text-white font-semibold">자기 녹음을 직접 첨삭받고 싶은 분</span>만 신청하세요. 방장이 카카오 1:1로 문장 단위로 풀어드립니다.</p>
+        <ul class="mt-4 space-y-1.5 text-ink-200 text-sm">
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:chat-round-call-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>본인 TA 녹음 1건 문장 단위 첨삭</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:chat-round-call-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>첫 3초 · 거절 1차 · 클로징 지점 진단</li>
+          <li class="flex items-start gap-2"><iconify-icon icon="solar:chat-round-call-bold" width="16" class="text-brand-soft mt-0.5"></iconify-icon>본인 톤에 맞춘 맞춤 스크립트 2~3쌍</li>
+        </ul>
         <a href="https://open.kakao.com/o/sjEgkjlc" target="_blank" rel="noopener" class="btn-line !bg-white !text-ink-900 mt-6 w-full justify-center">
           <iconify-icon icon="solar:chat-round-call-bold" width="20"></iconify-icon>
           1:1 진단 시작하기
         </a>
+        <p class="text-xs text-ink-400 mt-3 text-center">선착순 · 단톡방 자료 받은 분 우선</p>
       </div>
     </div>
 
     <div class="mt-10 text-center">
       <p class="text-xs text-ink-300">
         <iconify-icon icon="solar:shield-check-bold" width="14"></iconify-icon>
-        입장 무료 · 승인제 · 유료 강의 판매 없음
+        입장 무료 · 승인제 · 유료 강의 판매 없음 · 강매 없음
       </p>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-white border-t border-ink-100 py-10">
-  <div class="max-w-5xl mx-auto px-5 flex items-center justify-between flex-wrap gap-4">
-    <div class="flex items-center gap-2">
+<footer class="py-10 border-t border-ink-100 bg-white">
+  <div class="max-w-5xl mx-auto px-5 text-center">
+    <div class="flex items-center justify-center gap-2">
       <span class="grid place-items-center h-7 w-7 rounded-md bg-ink-900 text-white font-extrabold text-[12px]">SA</span>
       <span class="font-bold text-ink-900 text-sm">세일즈 아카데미</span>
-      <span class="text-ink-400 text-xs">· MDRT COT 현직 설계사 커뮤니티</span>
     </div>
-    <div class="text-xs text-ink-400">
-      <a href="https://open.kakao.com/o/gBfA3Nqi" target="_blank" rel="noopener" class="hover:text-brand">단톡방 입장 →</a>
-    </div>
+    <p class="text-xs text-ink-400 mt-3">
+      장진호 · MDRT COT · 한국바른보험 아카데미 · 세일즈 아카데미 단톡방 운영
+    </p>
   </div>
 </footer>
-
-<script>
-  if (window.Motion) {
-    const { inView, animate } = window.Motion;
-    document.querySelectorAll('section h1, section h2, section h3, .step-card, .bg-white.border').forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(10px)';
-      inView(el, () => {
-        animate(el, { opacity: [0, 1], transform: ['translateY(10px)', 'translateY(0)'] }, { duration: 0.5, easing: [0.22, 1, 0.36, 1] });
-      }, { amount: 0.15 });
-    });
-  }
-</script>
 
 </body>
 </html>
