@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TA 화법 | BB 3건에서 초회 약속 2건 뽑는 첫마디 구조</title>
+<meta name="description" content="TA는 전화 잘해서 되는 게 아닙니다. 어떤 말을 어떤 순서로 하느냐 — MDRT COT 조직이 신입까지 같은 결과를 뽑아내는 4단계 TA 화법 구조." />
+<meta property="og:title" content="TA 화법 | BB 3건 → 초회 2건 뽑는 구조" />
+<meta property="og:description" content="첫마디에서 끊기면 끝, 첫마디를 버티면 약속은 따라옵니다. 실전 4단계 프레임." />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="ko_KR" />
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js"></script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'] },
+        colors: {
+          brand: { DEFAULT: '#1f4ed8', hover: '#1a3fb2', soft: '#eef3ff' },
+          ink: {
+            900: '#0a0a0a', 700: '#262626', 500: '#525252', 400: '#737373',
+            300: '#a3a3a3', 200: '#d4d4d4', 100: '#ededed', 50:  '#f7f7f7',
+          },
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  html, body { background: #ffffff; color: #0a0a0a; }
+  body {
+    font-family: "Pretendard Variable", Pretendard, system-ui, -apple-system, sans-serif;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .ko-body { line-height: 1.75; letter-spacing: -0.011em; }
+  .ko-head { line-height: 1.25; letter-spacing: -0.025em; word-break: keep-all; }
+
+  .btn-brand {
+    display:inline-flex; align-items:center; gap:.55rem;
+    padding: .9rem 1.4rem;
+    background:#1f4ed8; color:#ffffff;
+    border-radius:10px; font-weight:700;
+    transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 1px 2px rgba(31,78,216,.18);
+  }
+  .btn-brand:hover { background:#1a3fb2; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(31,78,216,.22); }
+
+  .btn-line {
+    display:inline-flex; align-items:center; gap:.55rem;
+    padding: .9rem 1.4rem;
+    background:#ffffff; color:#0a0a0a;
+    border:1px solid #e5e5e5; border-radius:10px; font-weight:600;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .btn-line:hover { border-color:#0a0a0a; background:#fafafa; }
+
+  .chip {
+    display:inline-flex; align-items:center; gap:.4rem;
+    padding:.32rem .65rem;
+    background:#eef3ff; color:#1a3fb2;
+    border-radius:999px; font-size:.78rem; font-weight:600;
+  }
+  .chip-gray {
+    display:inline-flex; align-items:center; gap:.4rem;
+    padding:.32rem .65rem;
+    background:#f7f7f7; color:#525252;
+    border:1px solid #ededed; border-radius:999px;
+    font-size:.78rem; font-weight:500;
+  }
+  .chip-dark {
+    display:inline-flex; align-items:center; gap:.4rem;
+    padding:.32rem .65rem;
+    background:#0a0a0a; color:#ffffff;
+    border-radius:999px; font-size:.78rem; font-weight:600;
+  }
+
+  .num {
+    display:inline-grid; place-items:center;
+    width:42px; height:42px;
+    background:#0a0a0a; color:#ffffff;
+    border-radius:10px;
+    font-weight:800; font-size:1.05rem;
+  }
+
+  .rule { height:1px; background:#ededed; }
+  iconify-icon { display:inline-block; }
+
+  .section { padding-top: 5rem; padding-bottom: 5rem; }
+  @media (max-width: 768px) { .section { padding-top: 3.5rem; padding-bottom: 3.5rem; } }
+
+  /* Quote bubble */
+  .bubble {
+    position:relative;
+    background:#f7f7f7;
+    border:1px solid #ededed;
+    border-radius:14px;
+    padding:1rem 1.15rem;
+  }
+  .bubble-bad {
+    background:#fff5f5;
+    border-color:#fed7d7;
+    color:#7b1f1f;
+  }
+  .bubble-good {
+    background:#eef3ff;
+    border-color:#c7d6ff;
+    color:#1a3fb2;
+  }
+
+  /* Step card */
+  .step-card {
+    background:#ffffff;
+    border:1px solid #ededed;
+    border-radius:14px;
+    padding: 1.75rem;
+  }
+  @media (min-width: 768px) { .step-card { padding: 2rem; } }
+</style>
+</head>
+<body class="min-h-[100dvh] antialiased text-ink-900 selection:bg-brand-soft selection:text-brand-hover">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-ink-100">
+  <nav class="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <span class="grid place-items-center h-8 w-8 rounded-md bg-ink-900 text-white font-extrabold text-[14px]">SA</span>
+      <span class="font-bold text-ink-900 tracking-tight hidden sm:inline">세일즈 아카데미</span>
+    </a>
+    <a href="https://open.kakao.com/o/gBfA3Nqi" target="_blank" rel="noopener" class="btn-brand !py-2 !px-3.5 text-sm">
+      단톡방 입장
+      <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="top" class="section pt-14 md:pt-20">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip-dark">
+      <iconify-icon icon="solar:phone-calling-bold" width="14"></iconify-icon>
+      TA 화법 · 실전 프레임
+    </span>
+    <h1 class="ko-head font-extrabold text-ink-900 mt-6 text-[clamp(2rem,5.2vw,3.5rem)]">
+      BB 3건에서 초회 약속 2건.<br/>
+      <span class="text-brand">운이 아니라 첫마디 구조입니다.</span>
+    </h1>
+    <p class="ko-body text-ink-500 mt-6 text-[1.05rem] max-w-2xl">
+      고객이 직접 상담 신청한 DB에 <span class="font-semibold text-ink-900">첫 연락</span>을 드리는 구간. 소개도 지인도 아니고, 고객 입장에선 "내가 신청한 건 맞는데 누구세요?"가 기본값입니다.
+      TA는 전화 잘한다고 되는 게 아니라 어떤 말을, 어떤 순서로 하느냐 — 청마디에서 끊기면 끝이고, 첫마디를 버티면 약속은 따라옵니다.
+    </p>
+
+    <!-- Result strip -->
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-px bg-ink-100 border border-ink-100 rounded-2xl overflow-hidden">
+      <div class="bg-white p-6">
+        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">BB 3건 중</div>
+        <div class="mt-2 font-extrabold text-3xl text-ink-900 tabular-nums">초회 <span class="text-brand">2건</span></div>
+        <div class="text-sm text-ink-500 mt-1">약속 체결률 약 66%</div>
+      </div>
+      <div class="bg-white p-6">
+        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">적용 범위</div>
+        <div class="mt-2 font-extrabold text-3xl text-ink-900">신입 포함 전원</div>
+        <div class="text-sm text-ink-500 mt-1">조직 시스템화로 동일 결과</div>
+      </div>
+      <div class="bg-white p-6">
+        <div class="text-xs text-ink-500 uppercase tracking-wider font-semibold">핵심 구간</div>
+        <div class="mt-2 font-extrabold text-3xl text-ink-900">첫 <span class="text-brand">15초</span></div>
+        <div class="text-sm text-ink-500 mt-1">끊김 여부가 결정되는 순간</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM: 왜 첫마디에서 끊기는가 -->
+<section class="section bg-ink-50 border-y border-ink-100">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip-gray"><iconify-icon icon="solar:danger-triangle-bold" width="14"></iconify-icon> 문제</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      상담 신청 DB 첫 통화, 이 세 지점에서 끊깁니다.
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">신청은 고객이 했지만, 전화 받는 순간 머릿속엔 "뭐 때문에 전화 오는 거지?"부터 떠오릅니다. 그 3초 안에 "영업전화" 회로가 켜지면 뒤에 무슨 말을 해도 귀에 안 들어옵니다.</p>
+
+    <div class="mt-10 space-y-4">
+      <div class="bg-white border border-ink-100 rounded-xl p-5 md:p-6">
+        <div class="flex items-start gap-4">
+          <span class="num shrink-0">!</span>
+          <div>
+            <h3 class="font-bold text-ink-900 text-lg">자기소개부터 길게 늘어놓기</h3>
+            <p class="ko-body text-ink-500 text-[.95rem] mt-2">"안녕하세요 고객님, OO생명 OO지점 설계사 OOO입니다~" — 신청한 걸 까먹을 만큼 시간이 지났을 수도 있는데, 회사명·지점·이름이 먼저 나오면 그냥 영업전화로 분류됩니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white border border-ink-100 rounded-xl p-5 md:p-6">
+        <div class="flex items-start gap-4">
+          <span class="num shrink-0">!</span>
+          <div>
+            <h3 class="font-bold text-ink-900 text-lg">신청하신 거 맞죠? 확인부터 들어감</h3>
+            <p class="ko-body text-ink-500 text-[.95rem] mt-2">"보험 상담 신청 주신 거 맞으시죠?" — 고객은 신청한 기억이 흐릿하면 반사적으로 "아 그거 그냥 눌러본 건데요"로 빠져나갑니다. 확인보다 맥락을 먼저 꺼내야 합니다.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white border border-ink-100 rounded-xl p-5 md:p-6">
+        <div class="flex items-start gap-4">
+          <span class="num shrink-0">!</span>
+          <div>
+            <h3 class="font-bold text-ink-900 text-lg">거절 한 번에 "네 알겠습니다"</h3>
+            <p class="ko-body text-ink-500 text-[.95rem] mt-2">"지금 바빠서요" 한마디에 바로 물러납니다. 버틸 수 있는 두 번째 문장이 준비되어 있지 않으면, 기껏 받은 DB가 거기서 끝납니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK: 4단계 TA 화법 -->
+<section class="section">
+  <div class="max-w-4xl mx-auto px-5">
+    <span class="chip"><iconify-icon icon="solar:routing-3-bold" width="14"></iconify-icon> 실전 프레임</span>
+    <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2.2rem]">
+      첫마디를 버티는 4단계 구조
+    </h2>
+    <p class="ko-body text-ink-500 mt-4 max-w-2xl">
+      아래 4단계를 순서대로 따라가시면, 첫마디에서 고객이 끊지 않습니다. 조직 내 신입도 이 순서만 지키면 같은 결과가 나옵니다.
+    </p>
+
+    <div class="mt-12 space-y-6">
+
+      <!-- Step 01 -->
+      <div class="step-card">
+        <div class="flex items-center gap-4">
+          <span class="num">01</span>
+          <div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">첫 3초</div>
+            <h3 class="font-bold text-ink-900 text-xl md:text-[1.35rem] ko-head mt-0.5">회사명 말고 '고객이 남긴 흔적'을 먼저 꺼낸다</h3>
+          </div>
+        </div>
+        <p class="ko-body text-ink-700 mt-5 text-[.97rem]">
+          OO생명·OO지점부터 꺼내면 영업전화 회로가 켜집니다. 고객이 <span class="font-semibold">본인이 남긴 행동</span>(상담 신청·자료 요청 등)을 먼저 떠올릴 수 있게, 신청 맥락을 1초 안에 꺼냅니다.
+        </p>
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✕ 이전 방식</div>
+            "안녕하세요 OO생명 OO지점 설계사 OOO입니다. 보험 상담 신청 주신 거 맞으시죠?"
+          </div>
+          <div class="bubble bubble-good">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✓ 4단계 방식</div>
+            "안녕하세요 OOO님, 요전에 보험 관련해서 상담 신청해주신 건으로 처음 연락드리는 장진호입니다. 1분만 괜찮으실까요?"
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="step-card">
+        <div class="flex items-center gap-4">
+          <span class="num">02</span>
+          <div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">다음 10초</div>
+            <h3 class="font-bold text-ink-900 text-xl md:text-[1.35rem] ko-head mt-0.5">'왜 전화했는지'가 아니라 '왜 안 귀찮게 하는지'를 설명한다</h3>
+          </div>
+        </div>
+        <p class="ko-body text-ink-700 mt-5 text-[.97rem]">
+          목적을 앞에서 꺼내면 고객은 결정을 내려야 합니다. 대신 <span class="font-semibold">"이 전화가 당신에게 부담 아닌 이유"</span>를 먼저 설명해서 경계를 낮춥니다. 신청은 본인이 했지만 당장 가입 결정하라는 전화가 아니라는 걸 명확히 해주는 게 핵심입니다.
+        </p>
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✕ 이전 방식</div>
+            "상담 신청 주셔서 연락드렸어요. 시간 괜찮으시면 만나 뵙고 설명드리려고요."
+          </div>
+          <div class="bubble bubble-good">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✓ 4단계 방식</div>
+            "가입해달라는 전화 아니고요, 신청해주신 내용 기반으로 현재 가입된 부분이랑 겹치는지만 먼저 체크해드리련고 연락드린 거예요."
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="step-card">
+        <div class="flex items-center gap-4">
+          <span class="num">03</span>
+          <div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">거절 1차 대응</div>
+            <h3 class="font-bold text-ink-900 text-xl md:text-[1.35rem] ko-head mt-0.5">"지금 바빠서요"에는 공감 먼저, 질문 다음</h3>
+          </div>
+        </div>
+        <p class="ko-body text-ink-700 mt-5 text-[.97rem]">
+          바로 "네 알겠습니다"로 물러나면 끝입니다. 대신 고객이 말한 이유를 그대로 <span class="font-semibold">되받아 인정하고</span>, 다음 스텝을 넘기는 <span class="font-semibold">질문형 문장</span>으로 전환합니다.
+        </p>
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✕ 이전 방식</div>
+            "아 네 알겠습니다, 나중에 다시 연락드릴게요."
+          </div>
+          <div class="bubble bubble-good">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✓ 4단계 방식</div>
+            "네 바쁘실 텐데 전화드려 죄송합니다. 이번 주랑 다음 주 중에 15분 정도 여유 나시는 시간이 언제쯤이실까요?"
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="step-card">
+        <div class="flex items-center gap-4">
+          <span class="num">04</span>
+          <div>
+            <div class="text-xs text-ink-500 font-semibold uppercase tracking-wider">약속 확정</div>
+            <h3 class="font-bold text-ink-900 text-xl md:text-[1.35rem] ko-head mt-0.5">'예/아니오'가 아니라 'A/B'로 닫는다</h3>
+          </div>
+        </div>
+        <p class="ko-body text-ink-700 mt-5 text-[.97rem]">
+          "만나주실 수 있나요?"는 고객에게 거절할 여지를 줍니다. <span class="font-semibold">"화요일 오전 / 목요일 오후"</span> 처럼 두 가지 선택지 사이에서 고르게 만들면, 자연스럽게 약속이 잡힙니다.
+        </p>
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bubble bubble-bad">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✕ 이전 방식</div>
+            "그럼 다음 주에 한번 만나뵐 수 있을까요?"
+          </div>
+          <div class="bubble bubble-good">
+            <div class="text-[.7rem] font-bold tracking-wider uppercase mb-1">✓ 4단계 방식</div>
+            "다음 주 화요일 오전 10시 / 목요일 오후 2시 중에 어디가 편하실까요? 편하신 쪽 카페에서 뵈면 됩니다."
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROOF / WHY THIS WORKS -->
+<section class="section bg-ink-50 border-y border-ink-100">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="grid grid-cols-12 gap-8 items-start">
+      <div class="col-span-12 md:col-span-5">
+        <span class="chip-gray"><iconify-icon icon="solar:shield-check-bold" width="14"></iconify-icon> 왜 조직 전원에게 통하는가</span>
+        <h2 class="ko-head font-extrabold text-ink-900 mt-5 text-3xl md:text-[2rem]">
+          개인 재능이 아니라<br/><span class="text-brand">순서의 문제였습니다.</span>
+        </h2>
+      </div>
+      <div class="col-span-12 md:col-span-7">
+        <ul class="space-y-5">
+          <li class="flex items-start gap-3">
+            <iconify-icon icon="solar:check-circle-bold" width="22" class="text-brand mt-0.5 shrink-0"></iconify-icon>
+            <div>
+              <div class="font-bold text-ink-900">첫 3초의 '신청 맥락 언급'이 영업전화 회로를 차단합니다.</div>
+              <p class="ko-body text-ink-500 text-[.95rem] mt-1">고객의 뇌가 "누구지?" → "아, 내가 신청했던 거"로 전환되는 순간, 귀가 열립니다.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <iconify-icon icon="solar:check-circle-bold" width="22" class="text-brand mt-0.5 shrink-0"></iconify-icon>
+            <div>
+              <div class="font-bold text-ink-900">"가입하라는 전화 아니다"가 결정 압력을 없앱니다.</div>
+              <p class="ko-body text-ink-500 text-[.95rem] mt-1">신청자 본인도 "오늘 뭔가 결정해야 하나" 하는 부담을 느낍니다. 그 압박을 먼저 풀어주면 오히려 대화가 이어집니다.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <iconify-icon icon="solar:check-circle-bold" width="22" class="text-brand mt-0.5 shrink-0"></iconify-icon>
+            <div>
+              <div class="font-bold text-ink-900">1차 거절에 '질문'으로 받아치면 대화권이 돌아옵니다.</div>
+              <p class="ko-body text-ink-500 text-[.95rem] mt-1">공감 한 문장 + 열린 질문 하나 — 이 조합만으로 대화를 70%까지 회복할 수 있습니다.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <iconify-icon icon="solar:check-circle-bold" width="22" class="text-brand mt-0.5 shrink-0"></iconify-icon>
+            <div>
+              <div class="font-bold text-ink-900">양자택일 클로징은 '거절 옵션'을 메뉴에서 빼버립니다.</div>
+              <p class="ko-body text-ink-500 text-[.95rem] mt-1">"할까/말까"가 아니라 "언제 할까"로 질문이 바뀌면, 약속이 따라옵니다.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA: Dual-track (cold visitor / warm visitor) -->
+<section class="section bg-ink-900 text-white">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-semibold">
+        <iconify-icon icon="solar:chat-round-dots-bold" width="14"></iconify-icon>
+        다음 스텝
+      </span>
+      <h2 class="ko-head font-extrabold text-white mt-6 text-3xl md:text-[2.5rem]">
+        읽은 것을 내 입에 붙이려면,<br/>
+        <span class="text-brand-soft">실제 TA 녹취를 같이 들어보는 게 가장 빠릅니다.</span>
+      </h2>
+      <p class="ko-body text-ink-200 mt-5 max-w-xl mx-auto text-[1rem]">
+        방장 장진호가 직접 답변드리는 1:1 카카오 채널에서, TA 녹취를 함께 문장 단위로 풀어드립니다.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+      <!-- Track 1: 단톡방 무료 입장 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-7">
+        <div class="text-xs text-brand-soft font-bold tracking-wider uppercase">설계사 전용 단톡방</div>
+        <h3 class="font-bold text-white text-xl mt-2">단톡방 무료 입장</h3>
+        <p class="ko-body text-ink-200 text-sm mt-3">진단·화법 매뉴얼 전부 열람, 녹취 프로그램, AI 상담 연습까지 — 결제 없음.</p>
+        <a href="https://open.kakao.com/o/gBfA3Nqi" target="_blank" rel="noopener" class="btn-brand mt-6 w-full justify-center">
+          <iconify-icon icon="solar:users-group-rounded-bold" width="20"></iconify-icon>
+          단톡방 입장하기
+        </a>
+      </div>
+      <!-- Track 2: 1:1 진단 -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-7">
+        <div class="text-xs text-brand-soft font-bold tracking-wider uppercase">방장 장진호 1:1 칄널</div>
+        <h3 class="font-bold text-white text-xl mt-2">TA 1:1 진단 신청</h3>
+        <p class="ko-body text-ink-200 text-sm mt-3">방장이 직접 답변하는 카카오 1:1 채널입니다. TA 녹취·스크립트 올려주시면 갘이 풀어드립니다.</p>
+        <a href="https://open.kakao.com/o/sjEgkjlc" target="_blank" rel="noopener" class="btn-line !bg-white !text-ink-900 mt-6 w-full justify-center">
+          <iconify-icon icon="solar:chat-round-call-bold" width="20"></iconify-icon>
+          1:1 진단 시작하기
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <p class="text-xs text-ink-300">
+        <iconify-icon icon="solar:shield-check-bold" width="14"></iconify-icon>
+        입장 무료 · 승인제 · 유료 강의 판매 없음
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-white border-t border-ink-100 py-10">
+  <div class="max-w-5xl mx-auto px-5 flex items-center justify-between flex-wrap gap-4">
+    <div class="flex items-center gap-2">
+      <span class="grid place-items-center h-7 w-7 rounded-md bg-ink-900 text-white font-extrabold text-[12px]">SA</span>
+      <span class="font-bold text-ink-900 text-sm">세일즈 아카데미</span>
+      <span class="text-ink-400 text-xs">· MDRT COT 현직 설계사 커뮤니티</span>
+    </div>
+    <div class="text-xs text-ink-400">
+      <a href="https://open.kakao.com/o/gBfA3Nqi" target="_blank" rel="noopener" class="hover:text-brand">단톡방 입장 →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  if (window.Motion) {
+    const { inView, animate } = window.Motion;
+    document.querySelectorAll('section h1, section h2, section h3, .step-card, .bg-white.border').forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(10px)';
+      inView(el, () => {
+        animate(el, { opacity: [0, 1], transform: ['translateY(10px)', 'translateY(0)'] }, { duration: 0.5, easing: [0.22, 1, 0.36, 1] });
+      }, { amount: 0.15 });
+    });
+  }
+</script>
+
+</body>
+</html>
